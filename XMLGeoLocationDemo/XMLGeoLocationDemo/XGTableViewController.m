@@ -23,6 +23,8 @@
 {
     [super viewDidLoad];
     
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
     if (![XGDataCache sharedInstance].locationArray)
     {
         [XGNetworkCommand enqueueCommandWithCallback:^(BOOL success, NSDictionary *response) {

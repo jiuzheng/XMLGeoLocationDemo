@@ -34,6 +34,7 @@
 
 - (void)configureWithXGLocation:(XGLocation *)location
 {
+    self.backgroundColor = [UIColor clearColor];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"MM/dd/yyyy hh:mma"];
     self.timestampLabel.text = [dateFormat stringFromDate:[NSDate dateWithTimeIntervalSince1970:location.timeStamp]];

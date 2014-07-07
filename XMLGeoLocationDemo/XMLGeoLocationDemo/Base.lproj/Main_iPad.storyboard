@@ -1,55 +1,146 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="etJ-Uo-jah">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
+        <!--Table View Controller - Table View-->
+        <scene sceneID="DRa-lV-W5s">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
+                <viewController id="d8H-HI-ePO" customClass="XGTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C6L-Ez-IGg"/>
+                        <viewControllerLayoutGuide type="bottom" id="jmR-8X-vM3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qFF-Wm-wJP">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tableview.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lDS-60-l0a">
+                                <rect key="frame" x="0.0" y="0.0" width="778" height="976"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-80-yKt">
+                                <rect key="frame" x="0.0" y="20" width="768" height="956"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LocationCellID" rowHeight="82" id="ANC-Zs-eHC" customClass="XGTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="768" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ANC-Zs-eHC" id="qYF-lZ-hEw">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="82"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell.png" translatesAutoresizingMaskIntoConstraints="NO" id="YZe-vH-vff">
+                                                    <rect key="frame" x="134" y="12" width="623" height="57"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last seen at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ua-Ls-U6b">
+                                                    <rect key="frame" x="172" y="18" width="118" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Stamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imd-36-kmj">
+                                                    <rect key="frame" x="431" y="18" width="317" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="574" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-fm-eWQ">
+                                                    <rect key="frame" x="172" y="33" width="574" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="contacts_rrc.png" translatesAutoresizingMaskIntoConstraints="NO" id="VuZ-YE-ud0">
+                                                    <rect key="frame" x="30" y="12" width="58" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="UEr-fm-eWQ" id="L06-ti-Ngb"/>
+                                            <outlet property="timestampLabel" destination="Imd-36-kmj" id="871-Ac-FMw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="d8H-HI-ePO" id="1yd-CN-KcD"/>
+                                    <outlet property="delegate" destination="d8H-HI-ePO" id="zzr-Gj-nhF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Table View" image="first" id="SGg-wc-N0j"/>
                     <connections>
-                        <segue destination="RZP-K0-Evv" kind="relationship" relationship="viewControllers" id="t7H-Zm-2ZD"/>
+                        <outlet property="tableView" destination="eeX-80-yKt" id="95b-WN-CVp"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VvX-Mr-FIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1373" y="522"/>
+            <point key="canvasLocation" x="1194" y="-299"/>
         </scene>
         <!--Map View Controller - Map View-->
-        <scene sceneID="ScS-AE-mqD">
+        <scene sceneID="DWB-ld-NhB">
             <objects>
-                <viewController title="Map View" id="RZP-K0-Evv" customClass="XGMapViewController" sceneMemberID="viewController">
+                <viewController title="Map View" id="iTC-w4-bzt" customClass="XGMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Tux-Sj-BIR"/>
-                        <viewControllerLayoutGuide type="bottom" id="iww-OP-2so"/>
+                        <viewControllerLayoutGuide type="top" id="Bad-G1-BOs"/>
+                        <viewControllerLayoutGuide type="bottom" id="nD3-4c-N7E"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ePG-y7-epp">
+                    <view key="view" contentMode="scaleToFill" id="qdy-9t-fBl">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tfG-Hg-IAt">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nK2-hE-Nvu">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map View" image="second" id="Cli-G1-otW"/>
+                    <tabBarItem key="tabBarItem" title="Map View" image="second" id="ddt-oe-vQn"/>
+                    <connections>
+                        <outlet property="mapView" destination="nK2-hE-Nvu" id="ZBt-ar-jdU"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5zt-Y9-Dad" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwP-tl-W4i" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495" y="1146"/>
+            <point key="canvasLocation" x="1194" y="878"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QX9-c6-qs8">
+            <objects>
+                <tabBarController id="etJ-Uo-jah" customClass="XGTabBarController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Yh7-19-J2L">
+                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="d8H-HI-ePO" kind="relationship" relationship="viewControllers" id="MnL-pQ-T51"/>
+                        <segue destination="iTC-w4-bzt" kind="relationship" relationship="viewControllers" id="xTU-Lp-M5K"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggx-3X-GCE" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="200"/>
         </scene>
     </scenes>
     <resources>
+        <image name="cell.png" width="233" height="42"/>
+        <image name="contacts_rrc.png" width="256" height="256"/>
+        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="tableview.jpg" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
