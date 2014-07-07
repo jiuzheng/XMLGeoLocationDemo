@@ -11,6 +11,7 @@
 #import "XGDataCache.h"
 #import "XGTableViewCell.h"
 #import "XGLocation.h"
+#import "XGTabBarController.h"
 
 @interface XGTableViewController ()
 
@@ -22,12 +23,16 @@
 {
     [super viewDidLoad];
     
-    [XGNetworkCommand enqueueCommandWithCallback:^(BOOL success, NSDictionary *response) {
-        if (success) {
-            [[XGDataCache sharedInstance] updateWithDictionary:response];
-            [self.tableView reloadData];
-        }
-    }];
+    if (![XGDataCache sharedInstance].locationArray)
+    {
+        [XGNetworkCommand enqueueCommandWithCallback:^(BOOL success, NSDictionary *response) {
+            if (success) {
+                [[XGDataCache sharedInstance] updateWithDictionary:response];
+                [self.tableView reloadData];
+            }
+        }];
+    }
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -60,7 +65,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    if ([self.parentViewController isKindOfClass:[XGTabBarController class]])
+    {
+        [((XGTabBarController *)self.parentViewController) showOnMapLocationIndex:indexPath.row];
+    }
 }
 
 @end

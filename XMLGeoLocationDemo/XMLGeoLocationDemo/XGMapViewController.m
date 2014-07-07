@@ -9,6 +9,7 @@
 #import "XGMapViewController.h"
 #import "XGLocation.h"
 #import "XGDataCache.h"
+#import "XGNetworkCommand.h"
 
 @interface XGAnnotation : NSObject <MKAnnotation>
 {
@@ -70,6 +71,8 @@
 
 @interface XGMapViewController ()
 
+@property (nonatomic, strong) NSMutableArray * orderedMapAnnotations;
+
 @end
 
 @implementation XGMapViewController
@@ -78,12 +81,24 @@
 {
     [super viewDidLoad];
     
+    if (!self.orderedMapAnnotations) {
+        self.orderedMapAnnotations = [[NSMutableArray alloc] init];
+    }
+    
     // Some custom pin images
     self.mapView.delegate = self;
-    XGLocation * loc = [XGDataCache sharedInstance].locationArray[0];
-    NSUInteger zoomLevel = 15;
-    MKCoordinateSpan span = MKCoordinateSpanMake(0, 360 / pow(2, zoomLevel) * self.view.frame.size.width / 256);
-    self.mapView.region = MKCoordinateRegionMake(loc.location.coordinate, span);
+    
+    if (![XGDataCache sharedInstance].locationArray)
+    {
+        [XGNetworkCommand enqueueCommandWithCallback:^(BOOL success, NSDictionary *response) {
+            if (success) {
+                [[XGDataCache sharedInstance] updateWithDictionary:response];
+                
+                [self refreshOnMapLocations:[XGDataCache sharedInstance].locationArray];
+                [self selectMapAnnotationAtIndex:0];
+            }
+        }];
+    }
     
     [self refreshOnMapLocations:[XGDataCache sharedInstance].locationArray];
 }
@@ -91,11 +106,22 @@
 - (void)refreshOnMapLocations:(NSArray *)locations
 {
     [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.orderedMapAnnotations removeAllObjects];
     for (XGLocation *info in locations)
     {
         XGAnnotation *annotation = [[XGAnnotation alloc] initWithLocation:info.location title:info.address];
+        [self.orderedMapAnnotations addObject:annotation];
         [self.mapView addAnnotation:annotation];
     }
+}
+
+- (void)selectMapAnnotationAtIndex:(NSUInteger)index
+{
+    XGAnnotation * annotation = self.orderedMapAnnotations[index];
+    NSUInteger zoomLevel = 15;
+    MKCoordinateSpan span = MKCoordinateSpanMake(0, 360 / pow(2, zoomLevel) * self.view.frame.size.width / 256);
+    self.mapView.region = MKCoordinateRegionMake(annotation.coordinate, span);
+    [self.mapView selectAnnotation:self.orderedMapAnnotations[index] animated:YES];
 }
 
 #pragma mark - MKMapViewDelegate

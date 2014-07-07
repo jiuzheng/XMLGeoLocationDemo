@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+- (void)selectMapAnnotationAtIndex:(NSUInteger) index;
+
 @end
