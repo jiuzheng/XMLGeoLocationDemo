@@ -13,7 +13,7 @@
 @interface XGLocation : NSObject
 
 @property (nonatomic, strong) NSString *                address;
-@property (nonatomic, assign) CLLocationCoordinate2D    coordinates;
+@property (nonatomic, strong) CLLocation *              location;
 @property (nonatomic, assign) NSTimeInterval            timeStamp;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

@@ -16,8 +16,8 @@
     if (self)
     {
         _address = dict[@"address"][@"text"];
-        _coordinates.latitude = [dict[@"lat"][@"text"] doubleValue];
-        _coordinates.longitude = [dict[@"lon"][@"text"] doubleValue];
+        _location = [[CLLocation alloc] initWithLatitude:[dict[@"lat"][@"text"] doubleValue]
+                                               longitude:[dict[@"lon"][@"text"] doubleValue]];
         _timeStamp = [dict[@"timestamp"][@"text"] doubleValue];
     }
     

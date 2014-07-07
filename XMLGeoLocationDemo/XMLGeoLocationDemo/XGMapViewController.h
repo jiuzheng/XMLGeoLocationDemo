@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 Jiuzheng Chen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import MapKit;
 
-@interface XGMapViewController : UIViewController
+@interface XGMapViewController : UIViewController <MKMapViewDelegate>
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

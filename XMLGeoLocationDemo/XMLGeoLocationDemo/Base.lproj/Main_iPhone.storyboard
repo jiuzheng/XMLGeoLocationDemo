@@ -24,6 +24,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map View" image="second" id="Z7h-1E-pvt"/>
+                    <connections>
+                        <outlet property="mapView" destination="rw6-Ic-Z22" id="9WU-YW-BYY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,66 @@
 //
 
 #import "XGMapViewController.h"
+#import "XGLocation.h"
+#import "XGDataCache.h"
+
+@interface XGAnnotation : NSObject <MKAnnotation>
+{
+    CLLocation *_location;
+    NSString *_title;
+}
+
+@property (nonatomic, strong) XGLocation *info;
+
+@end
+
+@implementation XGAnnotation
+
+- (id)initWithLocation:(CLLocation *)location title:(NSString *)title
+{
+    self = [super init];
+    if (self)
+    {
+        _location = location;
+        _title = title;
+    }
+    return self;
+}
+
+#pragma mark - MKAnnotation
+
+- (CLLocationCoordinate2D)coordinate
+{
+    return _location.coordinate;
+}
+
+- (NSString *)title
+{
+    return _title;
+}
+
+@end
+
+@interface XGAnnotationView : MKPinAnnotationView
+
+@end
+
+@implementation XGAnnotationView
+
+- (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
+        UIImage *pinImage = [UIImage imageNamed:@"pin_icon.png"];
+        self.image = pinImage;
+        
+        self.canShowCallout = YES;
+    }
+    return self;
+}
+
+@end
 
 @interface XGMapViewController ()
 
@@ -17,13 +77,50 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Some custom pin images
+    self.mapView.delegate = self;
+    XGLocation * loc = [XGDataCache sharedInstance].locationArray[0];
+    NSUInteger zoomLevel = 15;
+    MKCoordinateSpan span = MKCoordinateSpanMake(0, 360 / pow(2, zoomLevel) * self.view.frame.size.width / 256);
+    self.mapView.region = MKCoordinateRegionMake(loc.location.coordinate, span);
+    
+    [self refreshOnMapLocations:[XGDataCache sharedInstance].locationArray];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)refreshOnMapLocations:(NSArray *)locations
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    for (XGLocation *info in locations)
+    {
+        XGAnnotation *annotation = [[XGAnnotation alloc] initWithLocation:info.location title:info.address];
+        [self.mapView addAnnotation:annotation];
+    }
+}
+
+#pragma mark - MKMapViewDelegate
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+}
+
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
+{
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    XGAnnotationView *annotationView = nil;
+    if ([annotation isKindOfClass:[XGAnnotation class]])
+    {
+        annotationView = (XGAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"XGAnnotationView"];
+        if (!annotationView)
+        {
+            annotationView = [[XGAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"XGAnnotationView"];
+        }
+    }
+    
+    return annotationView;
 }
 
 @end
