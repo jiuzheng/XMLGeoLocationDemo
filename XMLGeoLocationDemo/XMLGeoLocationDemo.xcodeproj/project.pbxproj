@@ -15,14 +15,15 @@
 		4E96BB18196A1F50006FB543 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96BB17196A1F50006FB543 /* AppDelegate.m */; };
 		4E96BB1B196A1F50006FB543 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E96BB19196A1F50006FB543 /* Main_iPhone.storyboard */; };
 		4E96BB1E196A1F50006FB543 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E96BB1C196A1F50006FB543 /* Main_iPad.storyboard */; };
-		4E96BB21196A1F50006FB543 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96BB20196A1F50006FB543 /* FirstViewController.m */; };
-		4E96BB24196A1F50006FB543 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96BB23196A1F50006FB543 /* SecondViewController.m */; };
+		4E96BB21196A1F50006FB543 /* XGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96BB20196A1F50006FB543 /* XGTableViewController.m */; };
+		4E96BB24196A1F50006FB543 /* XGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96BB23196A1F50006FB543 /* XGMapViewController.m */; };
 		4E96BB26196A1F50006FB543 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E96BB25196A1F50006FB543 /* Images.xcassets */; };
 		4E96BB2D196A1F50006FB543 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E96BB2C196A1F50006FB543 /* XCTest.framework */; };
 		4E96BB2E196A1F51006FB543 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E96BB07196A1F50006FB543 /* Foundation.framework */; };
 		4E96BB2F196A1F51006FB543 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E96BB0B196A1F50006FB543 /* UIKit.framework */; };
 		4E96BB37196A1F51006FB543 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E96BB35196A1F51006FB543 /* InfoPlist.strings */; };
 		4E96BB39196A1F51006FB543 /* XMLGeoLocationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96BB38196A1F51006FB543 /* XMLGeoLocationDemoTests.m */; };
+		4E96BB46196A25B8006FB543 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E96BB45196A25B8006FB543 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,16 +49,17 @@
 		4E96BB17196A1F50006FB543 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4E96BB1A196A1F50006FB543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		4E96BB1D196A1F50006FB543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		4E96BB1F196A1F50006FB543 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		4E96BB20196A1F50006FB543 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		4E96BB22196A1F50006FB543 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		4E96BB23196A1F50006FB543 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		4E96BB1F196A1F50006FB543 /* XGTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XGTableViewController.h; sourceTree = "<group>"; };
+		4E96BB20196A1F50006FB543 /* XGTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XGTableViewController.m; sourceTree = "<group>"; };
+		4E96BB22196A1F50006FB543 /* XGMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XGMapViewController.h; sourceTree = "<group>"; };
+		4E96BB23196A1F50006FB543 /* XGMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XGMapViewController.m; sourceTree = "<group>"; };
 		4E96BB25196A1F50006FB543 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4E96BB2B196A1F50006FB543 /* XMLGeoLocationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMLGeoLocationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E96BB2C196A1F50006FB543 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4E96BB34196A1F51006FB543 /* XMLGeoLocationDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XMLGeoLocationDemoTests-Info.plist"; sourceTree = "<group>"; };
 		4E96BB36196A1F51006FB543 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E96BB38196A1F51006FB543 /* XMLGeoLocationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMLGeoLocationDemoTests.m; sourceTree = "<group>"; };
+		4E96BB45196A25B8006FB543 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E96BB46196A25B8006FB543 /* MapKit.framework in Frameworks */,
 				4E96BB0A196A1F50006FB543 /* CoreGraphics.framework in Frameworks */,
 				4E96BB0C196A1F50006FB543 /* UIKit.framework in Frameworks */,
 				4E96BB08196A1F50006FB543 /* Foundation.framework in Frameworks */,
@@ -106,6 +109,7 @@
 		4E96BB06196A1F50006FB543 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E96BB45196A25B8006FB543 /* MapKit.framework */,
 				4E96BB07196A1F50006FB543 /* Foundation.framework */,
 				4E96BB09196A1F50006FB543 /* CoreGraphics.framework */,
 				4E96BB0B196A1F50006FB543 /* UIKit.framework */,
@@ -119,12 +123,9 @@
 			children = (
 				4E96BB16196A1F50006FB543 /* AppDelegate.h */,
 				4E96BB17196A1F50006FB543 /* AppDelegate.m */,
-				4E96BB19196A1F50006FB543 /* Main_iPhone.storyboard */,
-				4E96BB1C196A1F50006FB543 /* Main_iPad.storyboard */,
-				4E96BB1F196A1F50006FB543 /* FirstViewController.h */,
-				4E96BB20196A1F50006FB543 /* FirstViewController.m */,
-				4E96BB22196A1F50006FB543 /* SecondViewController.h */,
-				4E96BB23196A1F50006FB543 /* SecondViewController.m */,
+				4E96BB43196A1FD4006FB543 /* Model */,
+				4E96BB42196A1FCA006FB543 /* View */,
+				4E96BB44196A1FFB006FB543 /* Networking */,
 				4E96BB25196A1F50006FB543 /* Images.xcassets */,
 				4E96BB0E196A1F50006FB543 /* Supporting Files */,
 			);
@@ -158,6 +159,33 @@
 				4E96BB35196A1F51006FB543 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E96BB42196A1FCA006FB543 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E96BB19196A1F50006FB543 /* Main_iPhone.storyboard */,
+				4E96BB1C196A1F50006FB543 /* Main_iPad.storyboard */,
+				4E96BB1F196A1F50006FB543 /* XGTableViewController.h */,
+				4E96BB20196A1F50006FB543 /* XGTableViewController.m */,
+				4E96BB22196A1F50006FB543 /* XGMapViewController.h */,
+				4E96BB23196A1F50006FB543 /* XGMapViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4E96BB43196A1FD4006FB543 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4E96BB44196A1FFB006FB543 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +286,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E96BB24196A1F50006FB543 /* SecondViewController.m in Sources */,
+				4E96BB24196A1F50006FB543 /* XGMapViewController.m in Sources */,
 				4E96BB18196A1F50006FB543 /* AppDelegate.m in Sources */,
-				4E96BB21196A1F50006FB543 /* FirstViewController.m in Sources */,
+				4E96BB21196A1F50006FB543 /* XGTableViewController.m in Sources */,
 				4E96BB14196A1F50006FB543 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

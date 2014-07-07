@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FirstViewController.h
 //  XMLGeoLocationDemo
 //
 //  Created by Jiuzheng Chen on 7/6/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface XGTableViewController : UITableViewController
 
 @end

@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  FirstViewController.m
 //  XMLGeoLocationDemo
 //
 //  Created by Jiuzheng Chen on 7/6/14.
 //  Copyright (c) 2014 Jiuzheng Chen. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "XGTableViewController.h"
 
-@interface SecondViewController ()
+@interface XGTableViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation XGTableViewController
 
 - (void)viewDidLoad
 {
