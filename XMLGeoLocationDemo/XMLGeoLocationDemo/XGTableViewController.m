@@ -7,6 +7,8 @@
 //
 
 #import "XGTableViewController.h"
+#import "XGNetworkCommand.h"
+#import "XGDataCache.h"
 
 @interface XGTableViewController ()
 
@@ -17,6 +19,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [XGNetworkCommand enqueueCommandWithCallback:^(BOOL success, NSDictionary *response) {
+        if (success) {
+            [[XGDataCache sharedInstance] updateWithDictionary:response];
+        }
+    }];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
