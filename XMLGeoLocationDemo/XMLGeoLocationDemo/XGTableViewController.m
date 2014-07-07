@@ -9,6 +9,8 @@
 #import "XGTableViewController.h"
 #import "XGNetworkCommand.h"
 #import "XGDataCache.h"
+#import "XGTableViewCell.h"
+#import "XGLocation.h"
 
 @interface XGTableViewController ()
 
@@ -23,6 +25,7 @@
     [XGNetworkCommand enqueueCommandWithCallback:^(BOOL success, NSDictionary *response) {
         if (success) {
             [[XGDataCache sharedInstance] updateWithDictionary:response];
+            [self.tableView reloadData];
         }
     }];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -32,6 +35,32 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITableViewDelegate
+
+// The number of rows is equal to the number of earthquakes in the array.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return [XGDataCache sharedInstance].locationArray.count;
+}
+
+- (XGTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	static NSString *kLocationCellID = @"LocationCellID";
+  	XGTableViewCell *cell = (XGTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kLocationCellID];
+    
+    // Get the specific XGLocation
+    XGLocation * location = [XGDataCache sharedInstance].locationArray[indexPath.row];
+    
+    [cell configureWithXGLocation:location];
+	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
 }
 
 @end

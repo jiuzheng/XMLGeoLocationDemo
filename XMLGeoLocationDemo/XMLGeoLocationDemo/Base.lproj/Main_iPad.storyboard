@@ -15,7 +15,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="TPm-8X-Rag" kind="relationship" relationship="viewControllers" id="LRt-QF-7s7"/>
                         <segue destination="RZP-K0-Evv" kind="relationship" relationship="viewControllers" id="t7H-Zm-2ZD"/>
                     </connections>
                 </tabBarController>
@@ -48,39 +47,8 @@
             </objects>
             <point key="canvasLocation" x="2495" y="1146"/>
         </scene>
-        <!--Table View Controller - Table View-->
-        <scene sceneID="ILB-rX-aDp">
-            <objects>
-                <tableViewController id="TPm-8X-Rag" customClass="XGTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gqF-tG-eyA">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yaM-Ds-wRu">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yaM-Ds-wRu" id="FHd-xa-2OF">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="TPm-8X-Rag" id="T3i-CF-Fmo"/>
-                            <outlet property="delegate" destination="TPm-8X-Rag" id="Jjo-63-daG"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Table View" image="first" id="Rc5-bH-08j"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wyo-Fd-elJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2495" y="-114"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
