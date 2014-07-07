@@ -24,6 +24,11 @@
 		4E96BB37196A1F51006FB543 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E96BB35196A1F51006FB543 /* InfoPlist.strings */; };
 		4E96BB39196A1F51006FB543 /* XMLGeoLocationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96BB38196A1F51006FB543 /* XMLGeoLocationDemoTests.m */; };
 		4E96BB46196A25B8006FB543 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E96BB45196A25B8006FB543 /* MapKit.framework */; };
+		4E96BB49196A315E006FB543 /* XGDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96BB48196A315E006FB543 /* XGDataCache.m */; };
+		4E96BB4C196A329B006FB543 /* XGLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96BB4B196A329B006FB543 /* XGLocation.m */; };
+		4E96BB4E196A350A006FB543 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E96BB4D196A350A006FB543 /* CoreLocation.framework */; };
+		4E96BB51196A3B6F006FB543 /* XGNetworkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96BB50196A3B6F006FB543 /* XGNetworkCommand.m */; };
+		4EB50F83196A48B700220213 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB50F82196A48B700220213 /* XMLReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,15 @@
 		4E96BB36196A1F51006FB543 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E96BB38196A1F51006FB543 /* XMLGeoLocationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMLGeoLocationDemoTests.m; sourceTree = "<group>"; };
 		4E96BB45196A25B8006FB543 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4E96BB47196A315E006FB543 /* XGDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGDataCache.h; sourceTree = "<group>"; };
+		4E96BB48196A315E006FB543 /* XGDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGDataCache.m; sourceTree = "<group>"; };
+		4E96BB4A196A329B006FB543 /* XGLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGLocation.h; sourceTree = "<group>"; };
+		4E96BB4B196A329B006FB543 /* XGLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGLocation.m; sourceTree = "<group>"; };
+		4E96BB4D196A350A006FB543 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4E96BB4F196A3B6F006FB543 /* XGNetworkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNetworkCommand.h; sourceTree = "<group>"; };
+		4E96BB50196A3B6F006FB543 /* XGNetworkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNetworkCommand.m; sourceTree = "<group>"; };
+		4EB50F81196A48B700220213 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		4EB50F82196A48B700220213 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E96BB4E196A350A006FB543 /* CoreLocation.framework in Frameworks */,
 				4E96BB46196A25B8006FB543 /* MapKit.framework in Frameworks */,
 				4E96BB0A196A1F50006FB543 /* CoreGraphics.framework in Frameworks */,
 				4E96BB0C196A1F50006FB543 /* UIKit.framework in Frameworks */,
@@ -109,6 +124,7 @@
 		4E96BB06196A1F50006FB543 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E96BB4D196A350A006FB543 /* CoreLocation.framework */,
 				4E96BB45196A25B8006FB543 /* MapKit.framework */,
 				4E96BB07196A1F50006FB543 /* Foundation.framework */,
 				4E96BB09196A1F50006FB543 /* CoreGraphics.framework */,
@@ -126,6 +142,7 @@
 				4E96BB43196A1FD4006FB543 /* Model */,
 				4E96BB42196A1FCA006FB543 /* View */,
 				4E96BB44196A1FFB006FB543 /* Networking */,
+				4EB50F80196A48B700220213 /* ThirdParty */,
 				4E96BB25196A1F50006FB543 /* Images.xcassets */,
 				4E96BB0E196A1F50006FB543 /* Supporting Files */,
 			);
@@ -177,6 +194,10 @@
 		4E96BB43196A1FD4006FB543 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4E96BB4A196A329B006FB543 /* XGLocation.h */,
+				4E96BB4B196A329B006FB543 /* XGLocation.m */,
+				4E96BB47196A315E006FB543 /* XGDataCache.h */,
+				4E96BB48196A315E006FB543 /* XGDataCache.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -184,8 +205,19 @@
 		4E96BB44196A1FFB006FB543 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4E96BB4F196A3B6F006FB543 /* XGNetworkCommand.h */,
+				4E96BB50196A3B6F006FB543 /* XGNetworkCommand.m */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		4EB50F80196A48B700220213 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				4EB50F81196A48B700220213 /* XMLReader.h */,
+				4EB50F82196A48B700220213 /* XMLReader.m */,
+			);
+			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +319,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E96BB24196A1F50006FB543 /* XGMapViewController.m in Sources */,
+				4E96BB49196A315E006FB543 /* XGDataCache.m in Sources */,
+				4EB50F83196A48B700220213 /* XMLReader.m in Sources */,
 				4E96BB18196A1F50006FB543 /* AppDelegate.m in Sources */,
 				4E96BB21196A1F50006FB543 /* XGTableViewController.m in Sources */,
 				4E96BB14196A1F50006FB543 /* main.m in Sources */,
+				4E96BB51196A3B6F006FB543 /* XGNetworkCommand.m in Sources */,
+				4E96BB4C196A329B006FB543 /* XGLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +540,7 @@
 				4E96BB3E196A1F51006FB543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E96BB3F196A1F51006FB543 /* Build configuration list for PBXNativeTarget "XMLGeoLocationDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +549,7 @@
 				4E96BB41196A1F51006FB543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
